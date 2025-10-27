@@ -1,0 +1,13 @@
+_model: blog-post
+---
+title: the future of web development
+---
+date: 2023-12-20
+---
+excerpt: predictions and thoughts on where web technology is heading in the next few years.
+---
+body:
+
+The web keeps reinventing itself. From frictionless AI-assisted workflows to edge-native data storage, the shape of the
+stack is changing faster than ever. I share a few trends I'm watching closely and how they influence the way I approach
+architecture and developer experience today.

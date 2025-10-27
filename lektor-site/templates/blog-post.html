@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ this.title }} — Aditya Singh{% endblock %}
+
+{% block body %}
+  <article class="blog-post">
+    <header>
+      <h2>{{ this.title }}</h2>
+      {% if this.date %}
+        <time datetime="{{ this.date.isoformat() }}">
+          {{ this.date|dateformat('MMM dd, yyyy') }}
+        </time>
+      {% endif %}
+    </header>
+    {% if this.excerpt %}
+      <p class="excerpt">{{ this.excerpt }}</p>
+    {% endif %}
+    <div class="post-body">
+      {{ this.body }}
+    </div>
+  </article>
+{% endblock %}

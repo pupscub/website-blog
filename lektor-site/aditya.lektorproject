@@ -1,0 +1,6 @@
+[project]
+name = Aditya Singh Website
+default_locale = en
+
+[servers.production]
+target = rsync://example.com/path

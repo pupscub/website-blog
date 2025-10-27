@@ -1,0 +1,13 @@
+_model: blog-post
+---
+title: thoughts on minimalism
+---
+date: 2024-01-10
+---
+excerpt: why less is often more, especially in software design and daily life.
+---
+body:
+
+Minimalism isn't about austerity—it's about clarity. Whether I'm pruning a machine learning pipeline or tidying a
+living space, I keep rediscovering how removing friction reveals the work that matters. In this piece I explore a few
+rituals that help keep projects focused and ensure the teams around me can think clearly about what comes next.

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}{{ this.title }} — Aditya Singh{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css"
+    />
+    <link rel="stylesheet" href="{{ 'style.css'|asseturl }}" />
+  </head>
+  <body class="terminal">
+    <div class="container">
+      <header class="site-header terminal-nav">
+        <div class="terminal-logo">
+          <h1 class="site-title">Aditya Singh's Website</h1>
+        </div>
+        {% set home = site.get('/') %}
+        {% set blog = site.get('/blog') %}
+        {% set nav_items = [
+          {'label': 'Home', 'page': home},
+          {'label': 'Blog', 'page': blog},
+          {'label': 'Open Source', 'page': home, 'anchor': 'open-source'},
+          {'label': 'Collaborate', 'page': home, 'anchor': 'manual'}
+        ] %}
+        <nav>
+          <ul class="terminal-menu">
+            {% for item in nav_items %}
+              {% set href = item.page.url %}
+              {% if item.anchor is defined %}
+                {% set href = href ~ '#' ~ item.anchor %}
+              {% endif %}
+              {% set is_page = item.anchor is not defined %}
+              {% set is_active = is_page and (this.path == item.page.path) %}
+              <li class="terminal-menu-item">
+                <span class="prompt-indicator">
+                  {{ ">" if is_active else "|" }}
+                </span>
+                <a href="{{ href }}" class="{{ 'active-link' if is_active }}">
+                  {{ item.label }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </header>
+
+      <main class="terminal-window">
+        <section class="terminal-card">
+          {% block body %}{% endblock %}
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <small>Built with Lektor and Terminal.css.</small>
+      </footer>
+    </div>
+  </body>
+</html>

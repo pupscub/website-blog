@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ this.title }} — Aditya Singh{% endblock %}
+
+{% block body %}
+  <h2>{{ this.title }}</h2>
+  {% if this.description %}
+    <div class="lede">
+      {{ this.description }}
+    </div>
+  {% endif %}
+  <section class="blog-list">
+    {% for child in this.children %}
+      <article class="blog-card">
+        <header>
+          <h3>
+            <a href="{{ child.url }}">{{ child.title }}</a>
+          </h3>
+          {% if child.date %}
+            <time datetime="{{ child.date.isoformat() }}">
+              {{ child.date|dateformat('MMM dd, yyyy') }}
+            </time>
+          {% endif %}
+        </header>
+        {% if child.excerpt %}
+          <p class="excerpt">{{ child.excerpt }}</p>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </section>
+{% endblock %}

@@ -1,0 +1,32 @@
+_model: page
+---
+title: Home
+---
+body:
+
+Hi! I'm Aditya, and I like building thoughtful, human-centered software at the point where data science meets everyday
+life. I ship ML-backed products end to end—from experimentation and modeling through to the reliable systems that keep
+experiences fast and delightful.
+
+> From everyone who has been given much, much will be demanded; and from the one who has been entrusted with much, much
+> more will be asked. _Luke 12:48_
+
+Professionally, I've supported product, research, and platform teams across health tech and finance. My favorite work
+happens alongside cross-functional partners who care about clear communication, rigorous thinking, and getting things
+done. Away from screens I'm probably boxing, planning the next trip, or chasing the perfect espresso.
+
+If you'd like to team up or just chat, feel free to reach out via [email](mailto:contact@pupscub.dev) or
+[LinkedIn](https://www.linkedin.com/in/aditya2312).
+
+For the curious: this site is built with Lektor, Terminal.css, and a dash of custom CSS to keep the retro terminal vibe
+alive.
+
+### Open Source {#open-source}
+
+- [Project One](https://github.com/) — replace with your featured open source highlights.
+- [Project Two](https://github.com/) — describe the impact or learning.
+
+### Collaborate {#manual}
+
+I'm always excited to collaborate with teams who value clear thinking, deep empathy for users, and the craft of
+shipping polished products. Drop a note and let's explore what we can build together.

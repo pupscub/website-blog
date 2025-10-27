@@ -1,0 +1,14 @@
+_model: blog-post
+---
+title: building something cool
+---
+date: 2024-01-15
+---
+excerpt: thoughts on the creative process and shipping products that people actually want to use.
+---
+body:
+
+Building something meaningful is rarely about chasing a perfect idea. It's about working closely with the people who
+will use what you create, keeping feedback loops short, and staying humble enough to change course when the signal
+demands it. This post captures a few lessons from recent launches where curiosity, quick experiments, and thoughtful
+iteration made all the difference.
