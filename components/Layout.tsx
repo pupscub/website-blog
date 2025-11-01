@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 
 import { ThemeToggle } from "@/components/ThemeToggle"
+import { MusicToggle } from "@/components/MusicToggle"
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
@@ -47,7 +48,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <h1 className="text-lg font-semibold uppercase tracking-[0.28em] text-sky-600 drop-shadow-[0_0_18px_rgba(56,189,248,0.32)] dark:text-sky-300">
             Aditya Singh
           </h1>
-          <div className="absolute right-0">
+          <div className="absolute right-0 flex items-center gap-2">
+            <MusicToggle />
             <ThemeToggle />
           </div>
         </header>
