@@ -44,11 +44,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div aria-hidden className="background-layer background-starfield"></div>
       <div aria-hidden className="background-layer background-meteors"></div>
       <div className="relative mx-auto flex min-h-screen w-full max-w-4xl flex-col items-center px-6 py-12 sm:px-8">
-        <header className="relative mb-10 flex w-full max-w-3xl items-center justify-center text-center">
-          <h1 className="text-lg font-semibold uppercase tracking-[0.28em] text-sky-600 drop-shadow-[0_0_18px_rgba(56,189,248,0.32)] dark:text-sky-300">
+        <header className="relative mb-10 flex w-full max-w-3xl items-center justify-between sm:justify-center text-center">
+          <h1 className="text-lg font-semibold uppercase tracking-[0.15em] sm:tracking-[0.28em] text-sky-600 drop-shadow-[0_0_18px_rgba(56,189,248,0.32)] dark:text-sky-300">
             Aditya Singh
           </h1>
-          <div className="absolute right-0 flex items-center gap-2">
+          <div className="flex items-center gap-2 sm:absolute sm:right-0">
             <MusicToggle />
             <ThemeToggle />
           </div>

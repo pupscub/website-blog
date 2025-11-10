@@ -1,4 +1,3 @@
-@import url("https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css");
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
@@ -79,6 +78,20 @@
     color: var(--foreground);
     font-size: 19px;
     line-height: 1.65;
+  }
+  
+  /* Override terminal.css defaults for better dark mode */
+  .dark body,
+  .dark p,
+  .dark h1,
+  .dark h2,
+  .dark h3,
+  .dark blockquote {
+    color: var(--foreground) !important;
+  }
+  
+  .dark .terminal {
+    color: var(--foreground) !important;
   }
 }
 
