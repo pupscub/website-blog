@@ -3,6 +3,7 @@ import { GeistMono } from "geist/font/mono"
 import "./globals.css"
 
 import { ThemeProvider } from "@/components/theme-provider"
+import { MusicProvider } from "@/components/MusicProvider"
 
 export const metadata: Metadata = {
   title: "Aditya Singh | Software Engineer",
@@ -19,7 +20,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`terminal ${GeistMono.className}`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          {children}
+          <MusicProvider>
+            {children}
+          </MusicProvider>
         </ThemeProvider>
       </body>
     </html>

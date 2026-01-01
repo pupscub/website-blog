@@ -1,21 +1,6 @@
-import Link from "next/link"
-
 import Layout from "@/components/Layout"
-import { getRecentPosts } from "@/lib/posts"
 
-const BLOG_DATE_FORMAT = new Intl.DateTimeFormat("en-US", {
-  month: "short",
-  day: "2-digit",
-  year: "numeric",
-})
-
-function formatDate(date: string) {
-  return BLOG_DATE_FORMAT.format(new Date(date))
-}
-
-export default async function Home() {
-  const recentPosts = await getRecentPosts(3)
-
+export default function Home() {
   return (
     <Layout>
       <section className="space-y-6 text-[var(--foreground)]">
@@ -24,26 +9,41 @@ export default async function Home() {
           science meets everyday life. I ship ML-backed products end to end—from experimentation and modeling through
           to the reliable systems that keep experiences fast and delightful.
         </p>
+        <h2 className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-600 dark:text-slate-300">
+          Quotes I live by
+        </h2>
 
         <blockquote className="border-l-2 border-slate-300 pl-4 text-[var(--muted)] dark:border-slate-700/80">
           <p className="italic">
-            From everyone who has been given much, much will be demanded; and from the one who has been entrusted with
-            much, much more will be asked. <span className="text-sky-600 dark:text-sky-300">Luke 12:48</span>
+            Karmanye vadhikaraste ma phaleshu kadachana. Ma karma-phala-hetur bhur ma te sangostvakarmani.
+            <span className="ml-2 text-sky-600 dark:text-sky-300">Bhagavad Gita 2:47</span>
+          </p>
+          <p className="mt-2">
+            Meaning: Do your actions, and don&apos;t worry about the results. The results will take care of themselves.
           </p>
         </blockquote>
+
+        <blockquote className="border-l-2 border-slate-300 pl-4 text-[var(--muted)] dark:border-slate-700/80">
+          <p className="italic">
+            Fall in love with some activity, and do it! Nobody ever figures out what life is all about, and it doesn&apos;t matter.
+            Explore the world. Nearly everything is really interesting if you go into it deeply enough. Work as hard and as much as you want to on the things you like to do the best. Don&apos;t think about what you want to be, but what you want to do. Keep up some kind of a minimum with other things so that society doesn&apos;t stop you from doing anything at all.
+            <span className="ml-2 text-sky-600 dark:text-sky-300">Richard P. Feynman</span>
+          </p>
+        </blockquote>
+
 
         <p>
           Professionally, I&apos;ve supported product, research, and platform teams across health tech and finance. My
           favorite work happens alongside cross-functional partners who care about clear communication, rigorous
-          thinking, and getting things done. Away from screens I&apos;m probably boxing, planning the next trip, or
-          chasing the perfect espresso.
+          thinking, and getting things done. Away from screens I&apos;m probably listening to music, Reading books
+          or watching movies.
         </p>
 
         <p>
           If you&apos;d like to team up or just chat, feel free to reach out via{" "}
           <a
             className="text-sky-600 transition hover:text-sky-700 dark:text-sky-300 dark:hover:text-sky-200"
-            href="mailto:contact@pupscub.dev"
+            href="mailto:iadtyasingh23@gmail.com"
           >
             email
           </a>{" "}
@@ -72,28 +72,6 @@ export default async function Home() {
           </a>{" "}
           and Eric J. Ma&apos;s personal site.
         </p>
-      </section>
-
-      <section className="mt-12 space-y-4">
-        <h2 className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-600 dark:text-slate-300">Recent Writing</h2>
-        <div className="grid gap-3">
-          {recentPosts.map((post) => (
-            <article
-              key={post.slug}
-              className="flex flex-col gap-1 border-b border-slate-300 pb-4 last:border-none last:pb-0 sm:flex-row sm:items-start sm:justify-between"
-            >
-              <Link
-                href={`/blog/${post.slug}`}
-                className="font-medium text-sky-600 transition hover:text-sky-700 dark:text-sky-300 dark:hover:text-sky-200"
-              >
-                {post.title}
-              </Link>
-              <time className="text-[11px] uppercase tracking-[0.32em] text-slate-500 dark:text-slate-400">
-                {formatDate(post.date)}
-              </time>
-            </article>
-          ))}
-        </div>
       </section>
     </Layout>
   )

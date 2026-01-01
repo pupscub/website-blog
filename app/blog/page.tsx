@@ -1,6 +1,7 @@
-import Link from "next/link"
-
 import Layout from "@/components/Layout"
+
+/* Temporarily disabling blog listing until new content is ready.
+import Link from "next/link"
 import { getAllPostSummaries } from "@/lib/posts"
 
 const BLOG_DATE_FORMAT = new Intl.DateTimeFormat("en-US", {
@@ -47,6 +48,21 @@ export default async function Blog() {
             </article>
           ))}
         </div>
+      </section>
+    </Layout>
+  )
+}
+*/
+
+export default function Blog() {
+  return (
+    <Layout>
+      <section className="space-y-8 text-[var(--foreground)]">
+        <header>
+          <h1 className="text-xl font-semibold uppercase tracking-[0.24em] text-slate-700 dark:text-slate-200">Blog</h1>
+        </header>
+
+        <p className="text-base leading-relaxed text-[var(--muted)]">Coming soon.</p>
       </section>
     </Layout>
   )
