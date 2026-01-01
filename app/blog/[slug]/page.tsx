@@ -6,9 +6,9 @@ import { SharePost } from "@/components/SharePost"
 import { getAllPostSummaries, getPostBySlug } from "@/lib/posts"
 
 type BlogPostPageProps = {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 function toDateLabel(date: string) {
@@ -27,8 +27,9 @@ export async function generateStaticParams() {
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params
   try {
-    const post = await getPostBySlug(params.slug)
+    const post = await getPostBySlug(slug)
     const canonicalUrl = `${siteUrl}/blog/${post.slug}`
     return {
       title: `${post.title} | Aditya Singh`,
@@ -56,9 +57,10 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params
   let post
   try {
-    post = await getPostBySlug(params.slug)
+    post = await getPostBySlug(slug)
   } catch (error) {
     notFound()
   }
